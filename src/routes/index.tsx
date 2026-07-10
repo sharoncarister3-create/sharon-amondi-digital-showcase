@@ -546,12 +546,32 @@ function About() {
         <div className="grid lg:grid-cols-[2fr_3fr] gap-10 lg:gap-16 items-center">
           <Reveal>
             <div className="relative">
-              <div className="absolute -inset-3 bg-gradient-brand opacity-15 blur-2xl rounded-3xl" />
-              <img
-                src="/lov.img.jpeg"
-                alt="Sharon Amondi"
-                className="relative w-full aspect-[4/5] object-cover rounded-3xl border border-border shadow-[var(--shadow-glow)]"
-              />
+              <div className="absolute -inset-4 bg-gradient-brand rounded-3xl blur-2xl opacity-30" />
+              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-border shadow-[var(--shadow-glow)]">
+                <div className="absolute inset-0 z-10" style={{ background: "linear-gradient(135deg, rgba(59,130,246,0.35) 0%, rgba(139,92,246,0.25) 100%)" }} />
+                <img
+                  src={portraitUrl}
+                  alt="Sharon Amondi"
+                  width={1024}
+                  height={1280}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-[hsl(270,91%,65%)]/80 to-transparent z-20">
+                  <div className="text-primary-foreground">
+                    <p className="text-xs uppercase tracking-widest opacity-80">Sharon Amondi</p>
+                    <p className="font-display font-semibold">Design · Marketing · Web</p>
+                  </div>
+                </div>
+              </div>
+              <div className="absolute -bottom-6 -left-6 hidden sm:flex items-center gap-3 bg-card border border-border rounded-2xl px-4 py-3 shadow-[var(--shadow-soft)] animate-float-slow">
+                <div className="size-9 rounded-full bg-gradient-brand grid place-items-center">
+                  <Sparkles className="size-4 text-primary-foreground" />
+                </div>
+                <div>
+                  <p className="text-xs text-muted-foreground">Creative + Strategy</p>
+                  <p className="text-sm font-semibold">Brand · Marketing · Web</p>
+                </div>
+              </div>
             </div>
           </Reveal>
           <Reveal delay={100}>
@@ -560,11 +580,11 @@ function About() {
                 <span className="inline-flex items-center gap-1.5 text-xs font-bold tracking-[0.2em] uppercase text-gradient-brand bg-gradient-brand/10 px-3.5 py-1.5 rounded-full w-fit">
                   <Sparkles className="size-3" /> About Me
                 </span>
-                <h3 className="text-2xl sm:text-3xl font-bold font-display leading-tight">
+                <h3 className="text-4xl sm:text-5xl font-bold font-display leading-[1.05] tracking-tight">
                   Helping businesses grow through design and technology.
                 </h3>
               </div>
-              <div className="space-y-5 text-muted-foreground leading-relaxed">
+              <div className="space-y-5 text-lg sm:text-xl text-muted-foreground leading-relaxed">
                 <p>
                   My journey into digital design started with a simple curiosity — how great visuals
                   influence the way people connect with brands.
