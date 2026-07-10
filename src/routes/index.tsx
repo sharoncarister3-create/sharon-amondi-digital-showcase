@@ -18,8 +18,7 @@ import {
   Twitter,
   Facebook,
   Check,
-  Heart,
-  Target,
+
   Zap,
   Users,
   Lightbulb,
@@ -535,63 +534,7 @@ function About() {
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 size-[350px] rounded-full bg-gradient-brand opacity-10 blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative space-y-24">
-        {/* Intro + portrait */}
-        <div className="grid lg:grid-cols-[1fr_1.1fr] gap-14 lg:gap-20 items-center">
-          <Reveal>
-            <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-brand opacity-20 blur-2xl rounded-3xl" />
-              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-border shadow-[var(--shadow-glow)]">
-                <img
-                  src={portraitUrl}
-                  alt="Sharon Amondi — Digital Growth Partner"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-brand-ink/85 to-transparent">
-                  <p className="text-xs uppercase tracking-widest text-primary-foreground/80">Sharon Amondi</p>
-                  <p className="font-display font-semibold text-primary-foreground">Digital Growth Partner</p>
-                </div>
-              </div>
-              <div className="absolute -bottom-6 -right-6 hidden sm:flex items-center gap-3 bg-card border border-border rounded-2xl px-4 py-3 shadow-[var(--shadow-soft)] animate-float-slow">
-                <div className="size-9 rounded-full bg-gradient-brand grid place-items-center">
-                  <Heart className="size-4 text-primary-foreground" />
-                </div>
-                <div>
-                  <p className="text-xs text-muted-foreground">Driven by</p>
-                  <p className="text-sm font-semibold">Purpose · Craft · Growth</p>
-                </div>
-              </div>
-            </div>
-          </Reveal>
 
-          <Reveal delay={120}>
-            <div className="space-y-6">
-              <span className="inline-flex items-center gap-1.5 text-xs font-bold tracking-[0.2em] uppercase text-gradient-brand bg-gradient-brand/10 px-3.5 py-1.5 rounded-full">
-                <Sparkles className="size-3" /> About Me
-              </span>
-              <h2 className="text-4xl sm:text-5xl font-bold leading-[1.05] tracking-tight">
-                Hi, I'm Sharon Amondi — a <span className="text-gradient-brand">creative digital partner</span>.
-              </h2>
-              <p className="text-muted-foreground leading-relaxed text-base sm:text-lg">
-                I'm a Graphic Designer, Digital Marketer, and Web Developer passionate about helping
-                businesses build strong, unforgettable digital brands. I believe great design and
-                smart marketing shouldn't just look beautiful — they should drive real growth.
-              </p>
-              <div className="flex flex-wrap items-center gap-4 pt-2">
-                <Button asChild size="lg" className="rounded-full bg-gradient-brand text-primary-foreground hover:opacity-95 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200">
-                  <a href="#contact">Let's Work Together <ArrowRight className="size-4" /></a>
-                </Button>
-                <Button asChild size="lg" variant="outline" className="rounded-full hover:bg-secondary hover:scale-[1.02] active:scale-[0.98] transition-all duration-200">
-                  <a href="#work">View Portfolio</a>
-                </Button>
-                <Button asChild size="lg" variant="outline" className="rounded-full hover:bg-secondary hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 border-dashed border-primary/40 text-primary">
-                  <a href="https://bright-you-display.lovable.app" target="_blank" rel="noopener noreferrer">
-                    View My Education Background
-                  </a>
-                </Button>
-              </div>
-            </div>
-          </Reveal>
-        </div>
 
         {/* My Story */}
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
@@ -626,58 +569,7 @@ function About() {
           </Reveal>
         </div>
 
-        {/* Skills & Expertise */}
-        <div className="space-y-10">
-          <Reveal>
-            <div className="max-w-2xl">
-              <span className="inline-flex items-center gap-1.5 text-xs font-bold tracking-[0.2em] uppercase text-gradient-brand bg-gradient-brand/10 px-3.5 py-1.5 rounded-full">
-                <Target className="size-3" /> Skills & Expertise
-              </span>
-              <h3 className="text-3xl sm:text-4xl font-bold font-display leading-tight mt-4">
-                A full creative + technical toolkit.
-              </h3>
-            </div>
-          </Reveal>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {expertise.map((e, i) => (
-              <Reveal key={e.label} delay={i * 60}>
-                <div className="group flex items-center gap-4 rounded-2xl border border-border bg-card p-5 hover:-translate-y-0.5 hover:shadow-[var(--shadow-soft)] hover:border-primary/30 transition-all">
-                  <div className="size-11 rounded-xl bg-gradient-brand grid place-items-center text-primary-foreground shrink-0 group-hover:scale-110 transition-transform">
-                    <e.icon className="size-5" />
-                  </div>
-                  <p className="font-semibold">{e.label}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
 
-        {/* What Makes Me Different */}
-        <div className="space-y-10">
-          <Reveal>
-            <div className="max-w-2xl">
-              <span className="inline-flex items-center gap-1.5 text-xs font-bold tracking-[0.2em] uppercase text-gradient-brand bg-gradient-brand/10 px-3.5 py-1.5 rounded-full">
-                <Sparkles className="size-3" /> What Makes Me Different
-              </span>
-              <h3 className="text-3xl sm:text-4xl font-bold font-display leading-tight mt-4">
-                A partner, not just a service provider.
-              </h3>
-            </div>
-          </Reveal>
-          <div className="grid md:grid-cols-3 gap-5">
-            {differentiators.map((d, i) => (
-              <Reveal key={d.title} delay={i * 80}>
-                <div className="h-full rounded-2xl border border-border bg-card p-7 hover:shadow-[var(--shadow-soft)] hover:-translate-y-1 transition-all">
-                  <div className="size-12 rounded-xl bg-gradient-brand grid place-items-center text-primary-foreground mb-5">
-                    <d.icon className="size-5" />
-                  </div>
-                  <h4 className="font-display font-semibold text-lg mb-2">{d.title}</h4>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{d.desc}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
 
         {/* Values / Personal statement */}
         <Reveal>
