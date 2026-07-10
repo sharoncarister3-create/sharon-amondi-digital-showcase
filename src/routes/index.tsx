@@ -537,13 +537,13 @@ function About() {
   ];
 
   return (
-    <section id="about" className="py-24 md:py-32 border-t border-border bg-gradient-to-b from-transparent via-secondary/10 to-transparent relative overflow-hidden">
+    <section id="about" className="py-30 md:py-[120px] px-5 md:px-20 border-t border-border bg-gradient-to-b from-transparent via-secondary/10 to-transparent relative overflow-hidden">
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 size-[350px] rounded-full bg-gradient-brand opacity-10 blur-3xl pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 relative space-y-28 md:space-y-36">
+      <div className="max-w-7xl mx-auto relative space-y-16 md:space-y-20">
 
         {/* About Me */}
-        <div className="grid lg:grid-cols-[2fr_3fr] gap-10 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-[2fr_3fr] gap-12 lg:gap-16 items-center">
           <Reveal>
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-brand rounded-3xl blur-2xl opacity-30" />
@@ -576,7 +576,7 @@ function About() {
           </Reveal>
           <Reveal delay={100}>
             <div className="space-y-8">
-              <div className="space-y-4">
+              <div className="space-y-8">
                 <span className="inline-flex items-center gap-1.5 text-xs font-bold tracking-[0.2em] uppercase text-gradient-brand bg-gradient-brand/10 px-3.5 py-1.5 rounded-full w-fit mb-4">
                   <Sparkles className="size-3" /> About Me
                 </span>
@@ -611,9 +611,9 @@ function About() {
         </div>
 
         {/* My Journey Timeline */}
-        <div className="space-y-10">
+        <div className="space-y-12">
           <Reveal>
-            <div className="text-center space-y-5">
+            <div className="text-center space-y-6">
               <span className="inline-flex items-center gap-1.5 text-xs font-bold tracking-[0.2em] uppercase text-gradient-brand bg-gradient-brand/10 px-3.5 py-1.5 rounded-full">
                 <Rocket className="size-3" /> My Journey
               </span>
@@ -650,9 +650,9 @@ function About() {
         </div>
 
         {/* My Philosophy */}
-        <div className="space-y-12">
+        <div className="space-y-16">
           <Reveal>
-            <div className="text-center space-y-5">
+            <div className="text-center space-y-6">
               <span className="inline-flex items-center gap-1.5 text-xs font-bold tracking-[0.2em] uppercase text-gradient-brand bg-gradient-brand/10 px-3.5 py-1.5 rounded-full">
                 <Quote className="size-3" /> My Philosophy
               </span>
