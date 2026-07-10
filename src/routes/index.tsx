@@ -610,6 +610,45 @@ function About() {
           </Reveal>
         </div>
 
+        {/* My Journey Timeline */}
+        <div className="space-y-10">
+          <Reveal>
+            <div className="text-center space-y-5">
+              <span className="inline-flex items-center gap-1.5 text-xs font-bold tracking-[0.2em] uppercase text-gradient-brand bg-gradient-brand/10 px-3.5 py-1.5 rounded-full">
+                <Rocket className="size-3" /> My Journey
+              </span>
+              <h3 className="text-[2rem] sm:text-[2.25rem] font-bold font-display leading-tight tracking-tight">
+                The path that shaped me.
+              </h3>
+            </div>
+          </Reveal>
+          <Reveal delay={80}>
+            <div className="relative max-w-2xl mx-auto">
+              <div className="absolute left-[19px] top-2 bottom-2 w-px bg-border" />
+              <div className="space-y-10">
+                {[
+                  { year: "2023", text: "Started learning Graphic Design" },
+                  { year: "2024", text: "Expanded into Digital Marketing" },
+                  { year: "2025", text: "Started building websites" },
+                  { year: "2026", text: "Helping businesses grow through branding, websites, and digital marketing" },
+                ].map((item, i) => (
+                  <Reveal key={item.year} delay={i * 80}>
+                    <div className="relative flex items-start gap-6">
+                      <div className="relative z-10 size-10 rounded-full bg-gradient-brand grid place-items-center text-primary-foreground font-display font-bold text-sm shrink-0 shadow-[var(--shadow-soft)]">
+                        {item.year.slice(2)}
+                      </div>
+                      <div className="pt-2">
+                        <p className="text-xs font-bold tracking-wider uppercase text-gradient-brand mb-1">{item.year}</p>
+                        <p className="text-[17px] sm:text-[18px] text-muted-foreground leading-relaxed">{item.text}</p>
+                      </div>
+                    </div>
+                  </Reveal>
+                ))}
+              </div>
+            </div>
+          </Reveal>
+        </div>
+
         {/* My Philosophy */}
         <div className="space-y-12">
           <Reveal>
