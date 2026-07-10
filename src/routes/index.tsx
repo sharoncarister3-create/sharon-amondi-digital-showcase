@@ -543,32 +543,42 @@ function About() {
       <div className="max-w-7xl mx-auto px-6 relative space-y-28 md:space-y-36">
 
         {/* About Me */}
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
+        <div className="grid lg:grid-cols-[2fr_3fr] gap-10 lg:gap-16 items-center">
           <Reveal>
-            <div className="space-y-7">
-              <span className="inline-flex items-center gap-1.5 text-xs font-bold tracking-[0.2em] uppercase text-gradient-brand bg-gradient-brand/10 px-3.5 py-1.5 rounded-full w-fit">
-                <Sparkles className="size-3" /> About Me
-              </span>
-              <h3 className="text-2xl sm:text-3xl font-bold font-display leading-tight">
-                Helping businesses grow through design and technology.
-              </h3>
+            <div className="relative">
+              <div className="absolute -inset-3 bg-gradient-brand opacity-15 blur-2xl rounded-3xl" />
+              <img
+                src="/lov.img.jpeg"
+                alt="Sharon Amondi"
+                className="relative w-full aspect-[4/5] object-cover rounded-3xl border border-border shadow-[var(--shadow-glow)]"
+              />
             </div>
           </Reveal>
           <Reveal delay={100}>
-            <div className="space-y-7 text-muted-foreground leading-relaxed">
-              <p>
-                My journey into digital design started with a simple curiosity — how great visuals
-                influence the way people connect with brands.
-              </p>
-              <p>
-                Over the years, I developed skills in graphic design, web development, and digital
-                marketing, combining creativity with strategy to solve real business problems.
-              </p>
-              <p>
-                Today, I help businesses build professional brands, engaging websites, and marketing
-                campaigns that attract customers and drive growth.
-              </p>
-              <div className="flex flex-wrap gap-2.5 pt-2">
+            <div className="space-y-8">
+              <div className="space-y-5">
+                <span className="inline-flex items-center gap-1.5 text-xs font-bold tracking-[0.2em] uppercase text-gradient-brand bg-gradient-brand/10 px-3.5 py-1.5 rounded-full w-fit">
+                  <Sparkles className="size-3" /> About Me
+                </span>
+                <h3 className="text-2xl sm:text-3xl font-bold font-display leading-tight">
+                  Helping businesses grow through design and technology.
+                </h3>
+              </div>
+              <div className="space-y-5 text-muted-foreground leading-relaxed">
+                <p>
+                  My journey into digital design started with a simple curiosity — how great visuals
+                  influence the way people connect with brands.
+                </p>
+                <p>
+                  Over the years, I developed skills in graphic design, web development, and digital
+                  marketing, combining creativity with strategy to solve real business problems.
+                </p>
+                <p>
+                  Today, I help businesses build professional brands, engaging websites, and marketing
+                  campaigns that attract customers and drive growth.
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-2.5 pt-1">
                 {skills.map((s) => (
                   <span key={s.label} className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/50 px-4 py-2 text-sm font-medium">
                     <s.icon className="size-4 text-primary" />
