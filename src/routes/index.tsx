@@ -576,15 +576,15 @@ function About() {
           </Reveal>
           <Reveal delay={100}>
             <div className="space-y-8">
-              <div className="space-y-5">
-                <span className="inline-flex items-center gap-1.5 text-xs font-bold tracking-[0.2em] uppercase text-gradient-brand bg-gradient-brand/10 px-3.5 py-1.5 rounded-full w-fit">
+              <div className="space-y-4">
+                <span className="inline-flex items-center gap-1.5 text-xs font-bold tracking-[0.2em] uppercase text-gradient-brand bg-gradient-brand/10 px-3.5 py-1.5 rounded-full w-fit mb-4">
                   <Sparkles className="size-3" /> About Me
                 </span>
-                <h3 className="text-4xl sm:text-5xl font-bold font-display leading-[1.05] tracking-tight">
+                <h3 className="text-[2.75rem] sm:text-[3rem] font-bold font-display leading-[1.1] tracking-tight">
                   Helping businesses grow through design and technology.
                 </h3>
               </div>
-              <div className="space-y-5 text-lg sm:text-xl text-muted-foreground leading-relaxed">
+              <div className="space-y-6 text-[17px] sm:text-[18px] text-muted-foreground leading-[1.75] text-left">
                 <p>
                   My journey into digital design started with a simple curiosity — how great visuals
                   influence the way people connect with brands.
