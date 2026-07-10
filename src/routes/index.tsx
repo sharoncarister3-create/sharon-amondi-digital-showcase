@@ -529,62 +529,88 @@ function SectionHeader({ kicker, title, sub }: { kicker: string; title: string; 
 }
 
 function About() {
+  const skills = [
+    { icon: Palette, label: "Graphic Design" },
+    { icon: Globe, label: "Web Development" },
+    { icon: Megaphone, label: "Digital Marketing" },
+    { icon: PenTool, label: "Brand Identity" },
+  ];
+
   return (
     <section id="about" className="py-24 md:py-32 border-t border-border bg-gradient-to-b from-transparent via-secondary/10 to-transparent relative overflow-hidden">
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 size-[350px] rounded-full bg-gradient-brand opacity-10 blur-3xl pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 relative space-y-24">
+      <div className="max-w-7xl mx-auto px-6 relative space-y-28 md:space-y-36">
 
-
-        {/* My Story */}
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
+        {/* About Me */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
           <Reveal>
-            <div className="space-y-5">
+            <div className="space-y-7">
               <span className="inline-flex items-center gap-1.5 text-xs font-bold tracking-[0.2em] uppercase text-gradient-brand bg-gradient-brand/10 px-3.5 py-1.5 rounded-full w-fit">
-                <Rocket className="size-3" /> My Story
+                <Sparkles className="size-3" /> About Me
               </span>
               <h3 className="text-2xl sm:text-3xl font-bold font-display leading-tight">
-                Where creative curiosity met digital strategy.
+                Helping businesses grow through design and technology.
               </h3>
             </div>
           </Reveal>
           <Reveal delay={100}>
-            <div className="space-y-4 text-muted-foreground leading-relaxed">
+            <div className="space-y-7 text-muted-foreground leading-relaxed">
               <p>
-                My journey started with a simple curiosity — how do visuals and stories influence
-                the way people connect with brands online? That question pulled me into the world
-                of design, and later into digital marketing, where creativity meets measurable impact.
+                My journey into digital design started with a simple curiosity — how great visuals
+                influence the way people connect with brands.
               </p>
               <p>
-                Over the years, I taught myself design principles, mastered industry tools, and
-                studied how great brands communicate. My passion grew into web development, so I
-                could deliver complete digital solutions — from identity, to campaigns, to the site
-                that ties it all together.
+                Over the years, I developed skills in graphic design, web development, and digital
+                marketing, combining creativity with strategy to solve real business problems.
               </p>
               <p>
-                Today, I combine design, marketing, and technology to help startups and entrepreneurs
-                turn ideas into brands that stand out and scale.
+                Today, I help businesses build professional brands, engaging websites, and marketing
+                campaigns that attract customers and drive growth.
               </p>
+              <div className="flex flex-wrap gap-2.5 pt-2">
+                {skills.map((s) => (
+                  <span key={s.label} className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/50 px-4 py-2 text-sm font-medium">
+                    <s.icon className="size-4 text-primary" />
+                    {s.label}
+                  </span>
+                ))}
+              </div>
             </div>
           </Reveal>
         </div>
 
-
-
-        {/* Values / Personal statement */}
-        <Reveal>
-          <div className="relative rounded-3xl overflow-hidden border border-border bg-card p-8 md:p-12">
-            <div className="absolute inset-0 bg-hero-glow opacity-70" />
-            <div className="relative max-w-3xl mx-auto text-center space-y-5">
-              <Quote className="size-8 mx-auto text-primary opacity-70" />
-              <p className="text-xl sm:text-2xl font-display leading-relaxed">
-                "I believe every business — no matter how small — deserves a brand that feels
-                intentional, trustworthy, and alive. My commitment is simple: to help you grow with
-                creativity, honesty, and design that works as hard as you do."
-              </p>
-              <p className="text-sm font-semibold tracking-wider uppercase text-gradient-brand">— Sharon Amondi</p>
+        {/* My Philosophy */}
+        <div className="space-y-12">
+          <Reveal>
+            <div className="text-center space-y-5">
+              <span className="inline-flex items-center gap-1.5 text-xs font-bold tracking-[0.2em] uppercase text-gradient-brand bg-gradient-brand/10 px-3.5 py-1.5 rounded-full">
+                <Quote className="size-3" /> My Philosophy
+              </span>
             </div>
-          </div>
+          </Reveal>
+          <Reveal delay={80}>
+            <div className="relative rounded-3xl overflow-hidden border border-border bg-secondary/30 p-10 md:p-14">
+              <div className="absolute inset-0 bg-hero-glow opacity-50" />
+              <div className="relative max-w-3xl mx-auto text-center space-y-6">
+                <Quote className="size-12 mx-auto text-primary/30" />
+                <p className="text-xl sm:text-2xl font-display leading-relaxed">
+                  "I believe every business — no matter how small — deserves a brand that feels
+                  intentional, trustworthy, and alive. My commitment is simple: to help you grow with
+                  creativity, honesty, and design that works as hard as you do."
+                </p>
+                <p className="text-sm font-semibold tracking-wider uppercase text-gradient-brand">— Sharon Amondi</p>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+
+        {/* Closing line */}
+        <Reveal>
+          <p className="text-center text-muted-foreground leading-relaxed text-base sm:text-lg max-w-2xl mx-auto">
+            When I'm not designing or developing websites, I'm always exploring new ways to help
+            businesses grow through technology and creative thinking.
+          </p>
         </Reveal>
       </div>
     </section>
