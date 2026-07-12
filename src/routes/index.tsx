@@ -66,7 +66,8 @@ function BrandMark({ className = "" }: { className?: string }) {
     <svg
       viewBox="0 0 40 40"
       aria-hidden="true"
-      className={`size-9 ${className}`}
+      className={`size-12 ${className}`}
+      style={{ shapeRendering: "geometricPrecision" }}
     >
       <defs>
         <linearGradient id="bm-grad" x1="0" y1="0" x2="1" y2="1">
@@ -318,12 +319,12 @@ function Nav() {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="#top" className="flex items-center gap-2.5 font-display font-bold text-lg">
+      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <a href="#top" className="flex items-center gap-3 py-2 pr-4 font-display font-bold">
           <BrandMark />
-          <span className="flex flex-col leading-none">
-            <span className="text-base">Sharon Amondi</span>
-            <span className="text-[10px] font-medium tracking-[0.15em] uppercase text-muted-foreground">Digital Growth Partner</span>
+          <span className="flex flex-col leading-none gap-1">
+            <span className="text-[20px] font-bold tracking-tight">Sharon Amondi</span>
+            <span className="text-[13px] font-medium tracking-[0.1em] uppercase text-foreground/70">Digital Growth Partner</span>
           </span>
         </a>
 
