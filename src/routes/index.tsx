@@ -251,6 +251,13 @@ function Index() {
       <Portfolio />
       <Testimonials />
       <Contact />
+      <section className="py-12 md:py-16">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <p className="text-lg md:text-xl text-muted-foreground">
+            Thank you for visiting my portfolio. I look forward to hearing about your next project.
+          </p>
+        </div>
+      </section>
       <Footer />
       <BackToTop />
     </div>
@@ -965,6 +972,9 @@ function Contact() {
                     </a>
                   ))}
                 </div>
+                <p className="text-sm text-muted-foreground pt-2">
+                  Currently available for freelance projects and full-time opportunities.
+                </p>
               </div>
             </Reveal>
 
@@ -1109,12 +1119,8 @@ function Footer() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="space-y-4">
-            <div className="flex items-center gap-2.5 font-display font-semibold">
-              <BrandMark />
-              <span>Sharon Amondi</span>
-            </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Helping businesses grow through design, web development and digital marketing.
+              Currently available for freelance projects and full-time opportunities.
             </p>
           </div>
 
