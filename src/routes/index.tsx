@@ -250,6 +250,14 @@ function Index() {
       <WhyChooseMe />
       <Portfolio />
       <Testimonials />
+      <section className="pt-14 md:pt-20 pb-4">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <p className="text-lg md:text-xl text-muted-foreground">
+            Have a project in mind? Let's create something{" "}
+            <span className="text-gradient-brand font-semibold">meaningful</span> together.
+          </p>
+        </div>
+      </section>
       <Contact />
       <section className="py-12 md:py-16">
         <div className="max-w-3xl mx-auto px-6 text-center">
@@ -1023,15 +1031,6 @@ function Contact() {
               </form>
             </Reveal>
           </div>
-
-          <Reveal>
-            <div className="text-center mt-6 pt-6 border-t border-border">
-              <p className="text-lg md:text-xl text-muted-foreground">
-                Have a project in mind? Let's create something{" "}
-                <span className="text-gradient-brand font-semibold">meaningful</span> together.
-              </p>
-            </div>
-          </Reveal>
         </div>
       </div>
     </section>
