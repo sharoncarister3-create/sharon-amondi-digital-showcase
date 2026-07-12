@@ -1118,9 +1118,7 @@ function Footer() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="space-y-4">
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              Currently available for freelance projects and full-time opportunities.
-            </p>
+            <img src="/logo.png" alt="Sharon Amondi" className="h-10" />
           </div>
 
           <div className="space-y-4">
