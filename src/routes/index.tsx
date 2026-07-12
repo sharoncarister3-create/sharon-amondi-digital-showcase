@@ -315,13 +315,13 @@ function Nav() {
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all ${
         scrolled
-          ? "bg-background/85 backdrop-blur-md border-b border-border shadow-sm"
+          ? "bg-background/95 backdrop-blur-md border-b border-border shadow-[0_1px_8px_rgba(0,0,0,0.06)]"
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        <a href="#top" className="flex items-center py-2 pr-4">
-          <img src="/logo.png" alt="Sharon Amondi" className="h-14 w-auto" />
+      <div className="max-w-7xl mx-auto pl-8 pr-6 h-[88px] flex items-center justify-between">
+        <a href="#top" className="flex items-center">
+          <img src="/image.png" alt="Sharon Amondi — Digital Growth Partner" className="h-[54px] w-auto" />
         </a>
 
         <nav className="hidden md:flex items-center gap-3 rounded-full border border-border bg-background/75 p-1 shadow-[var(--shadow-soft)] backdrop-blur">
@@ -1115,7 +1115,7 @@ function Footer() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="space-y-3">
-            <img src="/logo.png" alt="Sharon Amondi" className="h-[100px]" />
+            <img src="/image.png" alt="Sharon Amondi" className="h-[100px] w-auto" />
             <p className="text-sm text-muted-foreground leading-relaxed">
               Crafting digital experiences that drive growth. Let's turn your vision into results.
             </p>
