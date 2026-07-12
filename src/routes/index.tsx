@@ -321,7 +321,7 @@ function Nav() {
     >
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-3 py-2 pr-4 font-display font-bold">
-          <BrandMark />
+          <img src="/logo.png" alt="Sharon Amondi" className="h-12 w-auto" />
           <span className="flex flex-col leading-none gap-1">
             <span className="text-[20px] font-bold tracking-tight">Sharon Amondi</span>
             <span className="text-[13px] font-medium tracking-[0.1em] uppercase text-foreground/70">Digital Growth Partner</span>
