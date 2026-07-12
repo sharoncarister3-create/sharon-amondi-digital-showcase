@@ -30,6 +30,10 @@ import {
   Eye,
   MapPin,
   ChevronsDown,
+  User,
+  Send,
+  CheckCircle,
+  ArrowUp,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -248,6 +252,7 @@ function Index() {
       <Testimonials />
       <Contact />
       <Footer />
+      <BackToTop />
     </div>
   );
 }
@@ -881,17 +886,17 @@ function Testimonials() {
 function Contact() {
   const [sent, setSent] = useState(false);
   return (
-    <section id="contact" className="py-24 md:py-32">
+    <section id="contact" className="py-14 md:py-20">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="relative rounded-3xl overflow-hidden border border-border p-8 md:p-14 bg-card">
+        <div className="relative rounded-3xl overflow-hidden border border-border p-6 md:p-10 bg-card">
           <div className="absolute inset-0 bg-hero-glow opacity-80" />
           <div
             className="absolute -top-20 -right-20 size-[400px] rounded-full opacity-30 blur-3xl"
             style={{ background: "var(--gradient-brand)" }}
           />
-          <div className="relative grid lg:grid-cols-2 gap-14">
+          <div className="relative grid lg:grid-cols-2 gap-10">
             <Reveal>
-              <div className="space-y-7">
+              <div className="space-y-5">
                 <p className="text-xs font-semibold tracking-[0.2em] uppercase text-gradient-brand">
                   Get In Touch
                 </p>
@@ -902,7 +907,16 @@ function Contact() {
                   Available for new projects and collaborations. Tell me about your brand and goals
                   — I'll get back within 24 hours.
                 </p>
-                <div className="space-y-4 pt-2">
+                <div className="space-y-3">
+                  <div className="flex items-center gap-4">
+                    <div className="size-11 rounded-xl bg-gradient-brand grid place-items-center text-primary-foreground shrink-0">
+                      <MapPin className="size-5" />
+                    </div>
+                    <div className="min-w-0">
+                      <p className="text-xs uppercase tracking-wider text-muted-foreground">Location</p>
+                      <p className="font-semibold">Nairobi, Kenya</p>
+                    </div>
+                  </div>
                   <a
                     href="https://wa.me/254718557830"
                     target="_blank"
@@ -929,6 +943,15 @@ function Contact() {
                       <p className="font-semibold break-all group-hover:text-primary transition-colors">sharoncarister9@gmail.com</p>
                     </div>
                   </a>
+                  <div className="flex items-center gap-4">
+                    <div className="size-11 rounded-xl bg-gradient-brand grid place-items-center text-primary-foreground shrink-0">
+                      <Clock className="size-5" />
+                    </div>
+                    <div className="min-w-0">
+                      <p className="text-xs uppercase tracking-wider text-muted-foreground">Response Time</p>
+                      <p className="font-semibold">Usually replies within 24 hours</p>
+                    </div>
+                  </div>
                 </div>
                 <div className="flex gap-3 pt-2">
                   {[Linkedin, Instagram, Twitter, Facebook].map((Icon, i) => (
@@ -954,30 +977,51 @@ function Contact() {
                 }}
                 className="bg-background/70 backdrop-blur border border-border rounded-2xl p-6 md:p-8 space-y-4"
               >
-                <Field label="Name" name="name" placeholder="Your full name" />
-                <Field label="Email" name="email" type="email" placeholder="you@brand.com" />
-                <Field label="Subject" name="subject" placeholder="Project type" />
-                <div className="space-y-2">
-                  <label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                    Message
-                  </label>
-                  <textarea
-                    required
-                    rows={4}
-                    placeholder="Tell me about your project..."
-                    className="w-full rounded-xl border border-input bg-background px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring resize-none"
-                  />
-                </div>
-                <Button
-                  type="submit"
-                  size="lg"
-                  className="w-full rounded-xl bg-gradient-brand text-primary-foreground hover:opacity-90 transition-opacity"
-                >
-                  {sent ? "Message sent ✓" : (<>Send Message <ArrowRight className="size-4" /></>)}
-                </Button>
+                {sent ? (
+                  <div className="flex flex-col items-center justify-center py-12 space-y-4 text-center animate-in fade-in slide-in-from-bottom-4 duration-500">
+                    <div className="size-16 rounded-full bg-gradient-brand grid place-items-center text-primary-foreground">
+                      <CheckCircle className="size-8" />
+                    </div>
+                    <p className="text-xl font-semibold">Thanks! Your message has been sent.</p>
+                    <p className="text-muted-foreground text-sm">I'll get back to you within 24 hours.</p>
+                  </div>
+                ) : (
+                  <>
+                    <Field icon={<User className="size-4" />} label="Name" name="name" placeholder="Your full name" />
+                    <Field icon={<Mail className="size-4" />} label="Email" name="email" type="email" placeholder="you@brand.com" />
+                    <Field icon={<Send className="size-4" />} label="Subject" name="subject" placeholder="Project type" />
+                    <div className="space-y-2">
+                      <label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground flex items-center gap-2">
+                        <MessageCircle className="size-4" />
+                        Message
+                      </label>
+                      <textarea
+                        required
+                        rows={4}
+                        placeholder="Tell me about your project..."
+                        className="w-full rounded-xl border border-input bg-background px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring resize-none shadow-sm transition-shadow focus:shadow-md"
+                      />
+                    </div>
+                    <Button
+                      type="submit"
+                      className="w-full h-[58px] rounded-[9999px] bg-gradient-brand text-primary-foreground text-base font-semibold shadow-md hover:-translate-y-0.5 hover:brightness-110 transition-all duration-300 cursor-pointer"
+                    >
+                      Send Message <ArrowRight className="size-4" />
+                    </Button>
+                  </>
+                )}
               </form>
             </Reveal>
           </div>
+
+          <Reveal>
+            <div className="text-center mt-6 pt-6 border-t border-border">
+              <p className="text-lg md:text-xl text-muted-foreground">
+                Have a project in mind? Let's create something{" "}
+                <span className="text-gradient-brand font-semibold">meaningful</span> together.
+              </p>
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>
@@ -985,11 +1029,13 @@ function Contact() {
 }
 
 function Field({
+  icon,
   label,
   name,
   type = "text",
   placeholder,
 }: {
+  icon?: React.ReactNode;
   label: string;
   name: string;
   type?: string;
@@ -997,42 +1043,147 @@ function Field({
 }) {
   return (
     <div className="space-y-2">
-      <label htmlFor={name} className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+      <label htmlFor={name} className="text-xs font-semibold uppercase tracking-wider text-muted-foreground flex items-center gap-2">
+        {icon}
         {label}
       </label>
-      <input
-        id={name}
-        name={name}
-        type={type}
-        required
-        placeholder={placeholder}
-        className="w-full rounded-xl border border-input bg-background px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring"
-      />
+      <div className="relative">
+        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">
+          {icon}
+        </span>
+        <input
+          id={name}
+          name={name}
+          type={type}
+          required
+          placeholder={placeholder}
+          className="w-full rounded-xl border border-input bg-background pl-10 pr-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring shadow-sm transition-shadow focus:shadow-md"
+        />
+      </div>
     </div>
   );
 }
 
-function Footer() {
+function BackToTop() {
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setShow(window.scrollY > 400);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <footer className="border-t border-border py-10">
-      <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div className="flex items-center gap-2.5 font-display font-semibold">
-          <BrandMark />
-          <span className="flex flex-col leading-none">
-            <span>Sharon Amondi</span>
-            <span className="text-[10px] font-medium tracking-[0.15em] uppercase text-muted-foreground">Digital Growth Partner</span>
-          </span>
+    <button
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      aria-label="Back to top"
+      className={`fixed bottom-6 right-6 z-50 size-12 rounded-full bg-gradient-brand text-primary-foreground grid place-items-center shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer ${
+        show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
+      }`}
+    >
+      <ArrowUp className="size-5" />
+    </button>
+  );
+}
+
+function Footer() {
+  const quickLinks = [
+    { href: "#top", label: "Home" },
+    { href: "#about", label: "About" },
+    { href: "#services", label: "Services" },
+    { href: "#work", label: "Projects" },
+    { href: "#contact", label: "Contact" },
+  ];
+
+  const services = [
+    "Graphic Design",
+    "Web Development",
+    "Digital Marketing",
+  ];
+
+  return (
+    <footer className="border-t border-border pt-10 pb-6">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8" />
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="space-y-4">
+            <div className="flex items-center gap-2.5 font-display font-semibold">
+              <BrandMark />
+              <span>Sharon Amondi</span>
+            </div>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              Helping businesses grow through design, web development and digital marketing.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            <h4 className="font-display font-semibold text-sm uppercase tracking-wider">Quick Links</h4>
+            <ul className="space-y-2.5">
+              {quickLinks.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    className="text-sm text-muted-foreground hover:text-foreground hover:pl-1 transition-all duration-200"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="space-y-4">
+            <h4 className="font-display font-semibold text-sm uppercase tracking-wider">Services</h4>
+            <ul className="space-y-2.5">
+              {services.map((service) => (
+                <li key={service}>
+                  <span className="text-sm text-muted-foreground">{service}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="space-y-4">
+            <h4 className="font-display font-semibold text-sm uppercase tracking-wider">Contact</h4>
+            <ul className="space-y-3">
+              <li>
+                <a href="mailto:sharoncarister9@gmail.com" className="flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  <Mail className="size-4 shrink-0" />
+                  sharoncarister9@gmail.com
+                </a>
+              </li>
+              <li>
+                <a href="https://wa.me/254718557830" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  <Phone className="size-4 shrink-0" />
+                  +254 718 557 830
+                </a>
+              </li>
+              <li className="flex items-center gap-3 text-sm text-muted-foreground">
+                <MapPin className="size-4 shrink-0" />
+                Nairobi, Kenya
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <p className="text-xs text-muted-foreground text-center">
-          © {new Date().getFullYear()} Sharon Amondi — Digital Growth Partner. All rights reserved.
-        </p>
-        <div className="flex gap-4">
-          {[Linkedin, Instagram, Twitter, Facebook].map((Icon, i) => (
-            <a key={i} href="#" aria-label="Social" className="text-muted-foreground hover:text-foreground transition-colors">
-              <Icon className="size-4" />
-            </a>
-          ))}
+        <div className="border-t border-border mt-8 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex gap-4">
+            {[Linkedin, Instagram, Twitter, Facebook].map((Icon, i) => (
+              <a
+                key={i}
+                href="#"
+                aria-label="Social"
+                className="text-muted-foreground hover:text-primary hover:-translate-y-0.5 transition-all duration-300"
+              >
+                <Icon className="size-5" />
+              </a>
+            ))}
+          </div>
+          <p className="text-xs text-muted-foreground text-center">
+            © 2025 Sharon Amondi. All Rights Reserved.
+          </p>
         </div>
       </div>
     </footer>
