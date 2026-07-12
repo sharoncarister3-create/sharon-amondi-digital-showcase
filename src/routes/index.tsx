@@ -1117,8 +1117,11 @@ function Footer() {
         <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8" />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div className="space-y-4">
-            <img src="/logo.png" alt="Sharon Amondi" className="h-10" />
+          <div className="space-y-3">
+            <img src="/logo.png" alt="Sharon Amondi" className="h-[100px]" />
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              Crafting digital experiences that drive growth. Let's turn your vision into results.
+            </p>
           </div>
 
           <div className="space-y-4">
