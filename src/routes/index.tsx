@@ -139,7 +139,7 @@ const services = [
 
 const portfolio = [
   {
-    img: "/dan.jpeg",
+    img: "/car.png.jpeg",
     title: "Designing Brands, Driving Growth",
     tag: "Brand Profile Design",
     category: "Branding",
@@ -149,7 +149,7 @@ const portfolio = [
     result: "Secured 3 new corporate partnerships within the first month of using the new profile.",
   },
   {
-    img: "/eddy design.jpeg",
+    img: "/shan.png.jpeg",
     title: "Digital Marketing Agency",
     tag: "Agency Branding",
     category: "Branding",
@@ -157,6 +157,16 @@ const portfolio = [
     solution: "Built a complete brand system — logo, color palette, typography, and marketing collateral rooted in strategy.",
     tools: ["Illustrator", "Photoshop", "Canva"],
     result: "Established a distinctive, trusted brand presence that attracted its first 10 retainer clients.",
+  },
+  {
+    img: "/my graphic design.jpeg",
+    title: "Creative Graphic Design",
+    tag: "Graphic Design",
+    category: "Branding",
+    problem: "Client needed eye-catching graphic designs to elevate their brand presence.",
+    solution: "Crafted visually compelling designs blending modern aesthetics with clear messaging.",
+    tools: ["Photoshop", "Illustrator", "Figma"],
+    result: "Delivered a standout design suite that boosted brand recognition and client engagement.",
   },
   {
     img: "/my design.jpeg",
@@ -1049,7 +1059,7 @@ function Footer() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="space-y-3">
-            <img src="/image.png" alt="Sharon Amondi" className="h-[100px] w-auto" />
+            <img src="/logo.png" alt="Sharon Amondi" className="h-[100px] w-auto" />
             <p className="text-sm text-muted-foreground leading-relaxed">
               Crafting digital experiences that drive growth. Let's turn your vision into results.
             </p>
