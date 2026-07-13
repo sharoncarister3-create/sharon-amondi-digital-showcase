@@ -320,9 +320,8 @@ function Nav() {
       }`}
     >
       <div className="max-w-7xl mx-auto pl-8 pr-6 h-[88px] flex items-center justify-between">
-        <a href="#top" className="flex items-center gap-3">
-          <img src="/image.png" alt="Sharon Amondi — Digital Growth Partner" className="h-[54px] w-auto object-contain" style={{ imageRendering: "auto" }} />
-          <span className="text-lg font-bold tracking-tight text-foreground hidden sm:inline">Sharon Amondi</span>
+        <a href="#top" className="flex items-center">
+          <img src="/image.png" alt="Sharon Amondi — Digital Growth Partner" className="h-[68px] w-auto object-contain" style={{ imageRendering: "auto" }} />
         </a>
 
         <nav className="hidden md:flex items-center gap-3 rounded-full border border-border bg-background/75 p-1 shadow-[var(--shadow-soft)] backdrop-blur">
