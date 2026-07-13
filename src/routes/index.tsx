@@ -170,21 +170,6 @@ const portfolio = [
   },
 ];
 
-const testimonials = [
-  {
-    quote:
-      "Sharon delivered beyond expectations. Her design work elevated our brand instantly and her attention to detail is unmatched. A true creative partner.",
-    name: "Edwin Kabau",
-    role: "Entrepreneur & Client",
-  },
-  {
-    quote:
-      "Working with Sharon was seamless. She understood our vision, translated it into a stunning brand, and helped us grow online faster than expected.",
-    name: "Daniel Mutinda",
-    role: "Business Owner & Client",
-  },
-];
-
 const expertise = [
   { icon: Palette, label: "Graphic Design" },
   { icon: PenTool, label: "Branding & Logo Design" },
@@ -250,7 +235,6 @@ function Index() {
       <Services />
       <WhyChooseMe />
       <Portfolio />
-      <Testimonials />
       <section className="pt-14 md:pt-20 pb-4">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <p className="text-lg md:text-xl text-muted-foreground">
@@ -321,7 +305,7 @@ function Nav() {
     >
       <div className="max-w-7xl mx-auto pl-8 pr-6 h-[88px] flex items-center justify-between">
         <a href="#top" className="flex items-center">
-          <img src="/image.png" alt="Sharon Amondi — Digital Growth Partner" className="h-[68px] w-auto object-contain" style={{ imageRendering: "auto" }} />
+          <img src="/logo.png" alt="Sharon Amondi — Digital Growth Partner" className="h-[68px] w-auto object-contain" style={{ imageRendering: "auto" }} />
         </a>
 
         <nav className="hidden md:flex items-center gap-3 rounded-full border border-border bg-background/75 p-1 shadow-[var(--shadow-soft)] backdrop-blur">
@@ -431,16 +415,7 @@ function Hero() {
               Digital Marketing
             </span>
           </div>
-          <div
-            className="flex items-center gap-8 pt-2 animate-fade-up"
-            style={{ animationDelay: "360ms" }}
-          >
-            <Stat n="5+" l="Projects" />
-            <div className="h-10 w-px bg-border" />
-            <Stat n="5+" l="Happy Clients" />
-            <div className="h-10 w-px bg-border" />
-            <Stat n="100%" l="Client Satisfaction" />
-          </div>
+
           <div
             className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 backdrop-blur px-4 py-1.5 text-xs font-medium text-muted-foreground animate-fade-up"
             style={{ animationDelay: "480ms" }}
@@ -486,16 +461,6 @@ function Hero() {
       </div>
     </section>
   );
-}
-
-function Stat({ n, l }: { n: string; l: string }) {
-  return (
-    <div>
-      <p className="text-2xl font-display font-bold text-gradient-brand">{n}</p>
-      <p className="text-xs text-muted-foreground uppercase tracking-wider">{l}</p>
-    </div>
-  );
-}
 
 function TypewriterSubtitles({ subtitles }: { subtitles: string[] }) {
   const [text, setText] = useState("");
@@ -856,38 +821,6 @@ function Portfolio() {
                 ))}
               </div>
             </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Testimonials() {
-  return (
-    <section id="testimonials" className="py-24 md:py-32 bg-secondary/40 border-y border-border">
-      <div className="max-w-7xl mx-auto px-6">
-        <SectionHeader
-          kicker="Testimonials"
-          title="Trusted by founders & teams."
-        />
-        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          {testimonials.map((t, i) => (
-            <Reveal key={t.name} delay={i * 100}>
-              <figure className="h-full rounded-2xl border border-border bg-card p-7 flex flex-col justify-between hover:shadow-[var(--shadow-soft)] transition-shadow">
-                <Quote className="size-7 text-primary mb-4 opacity-70" />
-                <blockquote className="text-foreground leading-relaxed">"{t.quote}"</blockquote>
-                <figcaption className="mt-6 flex items-center gap-3 pt-5 border-t border-border">
-                  <div className="size-10 rounded-full bg-gradient-brand grid place-items-center text-primary-foreground font-semibold">
-                    {t.name.charAt(0)}
-                  </div>
-                  <div>
-                    <p className="font-semibold text-sm">{t.name}</p>
-                    <p className="text-xs text-muted-foreground">{t.role}</p>
-                  </div>
-                </figcaption>
-              </figure>
-            </Reveal>
           ))}
         </div>
       </div>
