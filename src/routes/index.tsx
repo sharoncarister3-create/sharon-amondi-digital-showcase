@@ -134,7 +134,6 @@ const services = [
   { icon: Megaphone, title: "Digital Marketing", desc: "Strategies that turn attention into conversion." },
   { icon: Sparkles, title: "Social Media Promotion", desc: "Targeted growth to reach the right audience." },
   { icon: Globe, title: "Website Development", desc: "Fast, responsive sites built to grow your brand." },
-  { icon: FileText, title: "Content Creation", desc: "Compelling copy and visuals across platforms." },
 ];
 
 const portfolio = [
@@ -245,7 +244,7 @@ function Index() {
       <Services />
       <WhyChooseMe />
       <Portfolio />
-      <section className="pt-14 md:pt-20 pb-4">
+      <section className="pt-10 md:pt-14 pb-4">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <p className="text-lg md:text-xl text-muted-foreground">
             Have a project in mind? Let's create something{" "}
@@ -254,7 +253,7 @@ function Index() {
         </div>
       </section>
       <Contact />
-      <section className="py-12 md:py-16">
+      <section className="py-8 md:py-12">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <p className="text-lg md:text-xl text-muted-foreground">
             Thank you for visiting my portfolio. I look forward to hearing about your next project.
@@ -300,7 +299,7 @@ function Nav() {
     { href: "#contact", label: "Contact" },
   ];
   const navLinkClass = (href: string) =>
-    `rounded-full px-4 py-2 text-sm font-medium transition-all ${
+    `rounded-full px-4 py-2 text-base font-medium transition-all ${
       activeHref === href
         ? "bg-gradient-brand/10 text-primary"
         : "text-muted-foreground hover:bg-secondary hover:text-foreground"
@@ -313,9 +312,9 @@ function Nav() {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto pl-8 pr-6 h-[88px] flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-10 h-[80px] flex items-center justify-between">
         <a href="#top" className="flex items-center">
-          <img src="/logo.png" alt="Sharon Amondi — Digital Growth Partner" className="h-[68px] w-auto object-contain" style={{ imageRendering: "auto" }} />
+          <img src="/logo.png" alt="Sharon Amondi — Digital Growth Partner" className="h-[92px] w-auto object-contain" style={{ imageRendering: "auto" }} />
         </a>
 
         <nav className="hidden md:flex items-center gap-3 rounded-full border border-border bg-background/75 p-1 shadow-[var(--shadow-soft)] backdrop-blur">
@@ -375,7 +374,7 @@ function Nav() {
 
 function Hero() {
   return (
-    <section id="top" className="relative pt-12 pb-16 md:pt-16 md:pb-24 overflow-hidden">
+    <section id="top" className="relative pt-10 pb-12 md:pt-12 md:pb-16 overflow-hidden">
       <div className="absolute inset-0 bg-hero-glow pointer-events-none" />
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50/60 via-transparent to-purple-50/40 pointer-events-none" />
       <div
@@ -395,16 +394,16 @@ function Hero() {
         <div className="rounded-3xl bg-card/40 backdrop-blur-sm border border-border/50 p-8 md:p-10 shadow-[var(--shadow-soft)] animate-float-slow">
           <div className="space-y-8">
           <div className="space-y-0.5 animate-fade-up">
-            <p className="text-lg sm:text-xl font-medium text-muted-foreground leading-none">Hello, I'm</p>
-            <h1 className="text-5xl sm:text-6xl lg:text-[4.25rem] font-bold leading-[1.05] tracking-tight text-gradient-brand">
+            <p className="text-[18px] font-medium text-muted-foreground leading-none">Hello, I'm</p>
+            <h1 className="text-[60px] font-bold leading-[1.05] tracking-tight text-gradient-brand">
               Sharon Amondi
             </h1>
-            <p className="text-xl sm:text-2xl font-semibold min-h-[2.5rem]">
+            <p className="text-[22px] font-semibold min-h-[2.5rem]">
               <TypewriterSubtitles subtitles={["Graphic Design", "Web Developer", "Digital Marketer"]} />
             </p>
           </div>
           <p
-            className="text-lg sm:text-xl text-muted-foreground max-w-xl leading-relaxed animate-fade-up"
+            className="text-[18px] text-muted-foreground max-w-xl leading-relaxed animate-fade-up"
             style={{ animationDelay: "120ms" }}
           >
             I design memorable brands, build responsive websites, and create digital marketing strategies that help businesses grow.
@@ -514,7 +513,7 @@ function SectionHeader({ kicker, title, sub }: { kicker: string; title: string; 
         <p className="text-xs font-semibold tracking-[0.2em] uppercase text-gradient-brand mb-3">
           {kicker}
         </p>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4">{title}</h2>
+        <h2 className="text-[42px] font-bold leading-tight mb-4">{title}</h2>
         {sub && <p className="text-muted-foreground text-lg">{sub}</p>}
       </div>
     </Reveal>
@@ -530,7 +529,7 @@ function About() {
   ];
 
   return (
-    <section id="about" className="py-30 md:py-[120px] px-5 md:px-20 border-t border-border bg-gradient-to-b from-transparent via-secondary/10 to-transparent relative overflow-hidden">
+    <section id="about" className="py-18 md:py-[90px] px-5 md:px-20 border-t border-border bg-gradient-to-b from-transparent via-secondary/10 to-transparent relative overflow-hidden">
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 size-[350px] rounded-full bg-gradient-brand opacity-10 blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative space-y-16 md:space-y-20">
@@ -573,11 +572,11 @@ function About() {
                 <span className="inline-flex items-center gap-1.5 text-xs font-bold tracking-[0.2em] uppercase text-gradient-brand bg-gradient-brand/10 px-3.5 py-1.5 rounded-full w-fit mb-4">
                   <Sparkles className="size-3" /> About Me
                 </span>
-                <h3 className="text-[2.75rem] sm:text-[3rem] font-bold font-display leading-[1.1] tracking-tight">
+                <h3 className="text-[42px] font-bold font-display leading-[1.1] tracking-tight">
                   Helping businesses grow through design and technology.
                 </h3>
               </div>
-              <div className="space-y-6 text-[17px] sm:text-[18px] text-muted-foreground leading-[1.75] text-left">
+              <div className="space-y-6 text-[18px] text-muted-foreground leading-[1.75] text-left">
                 <p>
                   My journey into digital design started with a simple curiosity — how great visuals
                   influence the way people connect with brands.
@@ -610,7 +609,7 @@ function About() {
               <span className="inline-flex items-center gap-1.5 text-xs font-bold tracking-[0.2em] uppercase text-gradient-brand bg-gradient-brand/10 px-3.5 py-1.5 rounded-full">
                 <Rocket className="size-3" /> My Journey
               </span>
-              <h3 className="text-[2rem] sm:text-[2.25rem] font-bold font-display leading-tight tracking-tight">
+              <h3 className="text-[42px] font-bold font-display leading-tight tracking-tight">
                 The path that shaped me.
               </h3>
             </div>
@@ -632,7 +631,7 @@ function About() {
                       </div>
                       <div className="pt-2">
                         <p className="text-xs font-bold tracking-wider uppercase text-gradient-brand mb-1">{item.year}</p>
-                        <p className="text-[17px] sm:text-[18px] text-muted-foreground leading-relaxed">{item.text}</p>
+                        <p className="text-[18px] text-muted-foreground leading-relaxed">{item.text}</p>
                       </div>
                     </div>
                   </Reveal>
@@ -656,7 +655,7 @@ function About() {
               <div className="absolute inset-0 bg-hero-glow opacity-50" />
               <div className="relative max-w-3xl mx-auto text-center space-y-6">
                 <Quote className="size-12 mx-auto text-primary/30" />
-                <p className="text-xl sm:text-2xl font-display leading-relaxed">
+                <p className="text-[22px] sm:text-[22px] font-display leading-relaxed">
                   "I believe every business — no matter how small — deserves a brand that feels
                   intentional, trustworthy, and alive. My commitment is simple: to help you grow with
                   creativity, honesty, and design that works as hard as you do."
@@ -669,7 +668,7 @@ function About() {
 
         {/* Closing line */}
         <Reveal>
-          <p className="text-center text-muted-foreground leading-relaxed text-base sm:text-lg max-w-2xl mx-auto">
+          <p className="text-center text-muted-foreground leading-relaxed text-[18px] max-w-2xl mx-auto">
             When I'm not designing or developing websites, I'm always exploring new ways to help
             businesses grow through technology and creative thinking.
           </p>
@@ -681,7 +680,7 @@ function About() {
 
 function Services() {
   return (
-    <section id="services" className="py-24 md:py-32 bg-secondary/40 border-y border-border">
+    <section id="services" className="py-18 md:py-24 bg-secondary/40 border-y border-border">
       <div className="max-w-7xl mx-auto px-6">
         <SectionHeader
           kicker="What I Do"
@@ -715,7 +714,7 @@ function Services() {
 
 function WhyChooseMe() {
   return (
-    <section id="why-me" className="py-24 md:py-32 relative overflow-hidden">
+    <section id="why-me" className="py-18 md:py-24 relative overflow-hidden">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 size-[500px] rounded-full bg-gradient-brand opacity-5 blur-3xl pointer-events-none" />
       <div className="max-w-7xl mx-auto px-6 relative">
         <SectionHeader
@@ -746,7 +745,7 @@ function Portfolio() {
   const byCategory = (cat: string) => portfolio.filter((p) => p.category === cat);
 
   return (
-    <section id="work" className="py-24 md:py-32">
+    <section id="work" className="py-18 md:py-24">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
           <Reveal>
@@ -842,7 +841,7 @@ function Portfolio() {
 function Contact() {
   const [sent, setSent] = useState(false);
   return (
-    <section id="contact" className="py-14 md:py-20">
+    <section id="contact" className="py-10 md:py-16">
       <div className="max-w-7xl mx-auto px-6">
         <div className="relative rounded-3xl overflow-hidden border border-border p-6 md:p-10 bg-card">
           <div className="absolute inset-0 bg-hero-glow opacity-80" />
@@ -863,10 +862,10 @@ function Contact() {
                   Available for new projects and collaborations. Tell me about your brand and goals
                   — I'll get back within 24 hours.
                 </p>
-                <div className="space-y-3">
-                  <div className="flex items-center gap-4">
-                    <div className="size-11 rounded-xl bg-gradient-brand grid place-items-center text-primary-foreground shrink-0">
-                      <MapPin className="size-5" />
+                <div className="space-y-4">
+                  <div className="flex items-center gap-5">
+                    <div className="size-12 rounded-xl bg-gradient-brand grid place-items-center text-primary-foreground shrink-0">
+                      <MapPin className="size-6" />
                     </div>
                     <div className="min-w-0">
                       <p className="text-xs uppercase tracking-wider text-muted-foreground">Location</p>
@@ -877,10 +876,10 @@ function Contact() {
                     href="https://wa.me/254718557830"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-4 group"
+                    className="flex items-center gap-5 group"
                   >
-                    <div className="size-11 rounded-xl bg-gradient-brand grid place-items-center text-primary-foreground shrink-0">
-                      <Phone className="size-5" />
+                    <div className="size-12 rounded-xl bg-gradient-brand grid place-items-center text-primary-foreground shrink-0">
+                      <Phone className="size-6" />
                     </div>
                     <div className="min-w-0">
                       <p className="text-xs uppercase tracking-wider text-muted-foreground">WhatsApp / Phone</p>
@@ -889,19 +888,19 @@ function Contact() {
                   </a>
                   <a
                     href="mailto:sharoncarister9@gmail.com"
-                    className="flex items-center gap-4 group"
+                    className="flex items-center gap-5 group"
                   >
-                    <div className="size-11 rounded-xl bg-gradient-brand grid place-items-center text-primary-foreground shrink-0">
-                      <Mail className="size-5" />
+                    <div className="size-12 rounded-xl bg-gradient-brand grid place-items-center text-primary-foreground shrink-0">
+                      <Mail className="size-6" />
                     </div>
                     <div className="min-w-0">
                       <p className="text-xs uppercase tracking-wider text-muted-foreground">Email</p>
                       <p className="font-semibold break-all group-hover:text-primary transition-colors">sharoncarister9@gmail.com</p>
                     </div>
                   </a>
-                  <div className="flex items-center gap-4">
-                    <div className="size-11 rounded-xl bg-gradient-brand grid place-items-center text-primary-foreground shrink-0">
-                      <Clock className="size-5" />
+                  <div className="flex items-center gap-5">
+                    <div className="size-12 rounded-xl bg-gradient-brand grid place-items-center text-primary-foreground shrink-0">
+                      <Clock className="size-6" />
                     </div>
                     <div className="min-w-0">
                       <p className="text-xs uppercase tracking-wider text-muted-foreground">Response Time</p>
@@ -934,7 +933,7 @@ function Contact() {
                   setSent(true);
                   setTimeout(() => setSent(false), 4000);
                 }}
-                className="bg-background/70 backdrop-blur border border-border rounded-2xl p-6 md:p-8 space-y-4"
+                className="bg-background/70 backdrop-blur border border-border rounded-3xl p-6 md:p-8 space-y-4"
               >
                 {sent ? (
                   <div className="flex flex-col items-center justify-center py-12 space-y-4 text-center animate-in fade-in slide-in-from-bottom-4 duration-500">
@@ -958,12 +957,12 @@ function Contact() {
                         required
                         rows={4}
                         placeholder="Tell me about your project..."
-                        className="w-full rounded-xl border border-input bg-background px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring resize-none shadow-sm transition-shadow focus:shadow-md"
+                        className="w-full rounded-2xl border border-input bg-background px-4 py-3 text-[16px] focus:outline-none focus:ring-2 focus:ring-ring resize-none shadow-sm transition-shadow focus:shadow-md"
                       />
                     </div>
                     <Button
                       type="submit"
-                      className="w-full h-[58px] rounded-[9999px] bg-gradient-brand text-primary-foreground text-base font-semibold shadow-md hover:-translate-y-0.5 hover:brightness-110 transition-all duration-300 cursor-pointer"
+                      className="w-full h-[58px] rounded-[9999px] bg-gradient-brand text-primary-foreground text-[16px] font-semibold shadow-md hover:-translate-y-0.5 hover:brightness-110 transition-all duration-300 cursor-pointer"
                     >
                       Send Message <ArrowRight className="size-4" />
                     </Button>
@@ -1007,7 +1006,7 @@ function Field({
           type={type}
           required
           placeholder={placeholder}
-          className="w-full rounded-xl border border-input bg-background pl-10 pr-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring shadow-sm transition-shadow focus:shadow-md"
+          className="w-full rounded-2xl border border-input bg-background pl-10 pr-4 py-3 text-[16px] focus:outline-none focus:ring-2 focus:ring-ring shadow-sm transition-shadow focus:shadow-md"
         />
       </div>
     </div>
@@ -1059,20 +1058,20 @@ function Footer() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="space-y-3">
-            <img src="/logo.png" alt="Sharon Amondi" className="h-[100px] w-auto" />
-            <p className="text-sm text-muted-foreground leading-relaxed">
+            <img src="/logo.png" alt="Sharon Amondi" className="h-[135px] w-auto" />
+            <p className="text-[14px] text-muted-foreground leading-relaxed">
               Crafting digital experiences that drive growth. Let's turn your vision into results.
             </p>
           </div>
 
           <div className="space-y-4">
-            <h4 className="font-display font-semibold text-sm uppercase tracking-wider">Quick Links</h4>
+            <h4 className="font-display font-semibold text-[14px] uppercase tracking-wider">Quick Links</h4>
             <ul className="space-y-2.5">
               {quickLinks.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground hover:pl-1 transition-all duration-200"
+                    className="text-[14px] text-muted-foreground hover:text-foreground hover:pl-1 transition-all duration-200"
                   >
                     {link.label}
                   </a>
@@ -1082,32 +1081,32 @@ function Footer() {
           </div>
 
           <div className="space-y-4">
-            <h4 className="font-display font-semibold text-sm uppercase tracking-wider">Services</h4>
+            <h4 className="font-display font-semibold text-[14px] uppercase tracking-wider">Services</h4>
             <ul className="space-y-2.5">
               {services.map((service) => (
                 <li key={service}>
-                  <span className="text-sm text-muted-foreground">{service}</span>
+                  <span className="text-[14px] text-muted-foreground">{service}</span>
                 </li>
               ))}
             </ul>
           </div>
 
           <div className="space-y-4">
-            <h4 className="font-display font-semibold text-sm uppercase tracking-wider">Contact</h4>
+            <h4 className="font-display font-semibold text-[14px] uppercase tracking-wider">Contact</h4>
             <ul className="space-y-3">
               <li>
-                <a href="mailto:sharoncarister9@gmail.com" className="flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <a href="mailto:sharoncarister9@gmail.com" className="flex items-center gap-3 text-[14px] text-muted-foreground hover:text-foreground transition-colors">
                   <Mail className="size-4 shrink-0" />
                   sharoncarister9@gmail.com
                 </a>
               </li>
               <li>
-                <a href="https://wa.me/254718557830" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <a href="https://wa.me/254718557830" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-[14px] text-muted-foreground hover:text-foreground transition-colors">
                   <Phone className="size-4 shrink-0" />
                   +254 718 557 830
                 </a>
               </li>
-              <li className="flex items-center gap-3 text-sm text-muted-foreground">
+              <li className="flex items-center gap-3 text-[14px] text-muted-foreground">
                 <MapPin className="size-4 shrink-0" />
                 Nairobi, Kenya
               </li>
@@ -1128,7 +1127,7 @@ function Footer() {
               </a>
             ))}
           </div>
-          <p className="text-xs text-muted-foreground text-center">
+          <p className="text-[14px] text-muted-foreground text-center">
             © 2025 Sharon Amondi. All Rights Reserved.
           </p>
         </div>
