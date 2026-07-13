@@ -461,6 +461,7 @@ function Hero() {
       </div>
     </section>
   );
+}
 
 function TypewriterSubtitles({ subtitles }: { subtitles: string[] }) {
   const [text, setText] = useState("");
