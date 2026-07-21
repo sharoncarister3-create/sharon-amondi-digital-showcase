@@ -37,6 +37,7 @@ import {
   Smartphone,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const portraitUrl = "/lov.img.jpeg";
 
@@ -841,6 +842,8 @@ function Portfolio() {
 
 function Contact() {
   const [sent, setSent] = useState(false);
+  const [showSmsTip, setShowSmsTip] = useState(false);
+  const isMobile = useIsMobile();
   return (
     <section id="contact" className="py-10 md:py-16">
       <div className="max-w-7xl mx-auto px-6">
@@ -887,18 +890,32 @@ function Contact() {
                       <p className="font-semibold group-hover:text-primary transition-colors">+254 718 557 830</p>
                     </div>
                   </a>
-                  <a
-                    href="sms:+254718557830"
-                    className="flex items-center gap-5 group"
-                  >
-                    <div className="size-12 rounded-xl bg-gradient-brand grid place-items-center text-primary-foreground shrink-0">
-                      <Smartphone className="size-6" />
-                    </div>
-                    <div className="min-w-0">
-                      <p className="text-xs uppercase tracking-wider text-muted-foreground">SMS</p>
-                      <p className="font-semibold group-hover:text-primary transition-colors">+254 718 557 830</p>
-                    </div>
-                  </a>
+                  <div className="relative">
+                    <a
+                      href={isMobile ? "sms:+254718557830" : "#"}
+                      onClick={(e) => {
+                        if (!isMobile) {
+                          e.preventDefault();
+                          setShowSmsTip(true);
+                          setTimeout(() => setShowSmsTip(false), 3000);
+                        }
+                      }}
+                      className="flex items-center gap-5 group"
+                    >
+                      <div className="size-12 rounded-xl bg-gradient-brand grid place-items-center text-primary-foreground shrink-0">
+                        <Smartphone className="size-6" />
+                      </div>
+                      <div className="min-w-0">
+                        <p className="text-xs uppercase tracking-wider text-muted-foreground">SMS</p>
+                        <p className="font-semibold group-hover:text-primary transition-colors">+254 718 557 830</p>
+                      </div>
+                    </a>
+                    {showSmsTip && (
+                      <div className="absolute left-0 top-full mt-2 z-10 rounded-xl bg-foreground text-background px-4 py-2 text-sm font-medium shadow-lg animate-in fade-in slide-in-from-top-2 duration-200 whitespace-nowrap">
+                        Open on your phone to send an SMS
+                      </div>
+                    )}
+                  </div>
                   <a
                     href="mailto:sharoncarister9@gmail.com"
                     className="flex items-center gap-5 group"
