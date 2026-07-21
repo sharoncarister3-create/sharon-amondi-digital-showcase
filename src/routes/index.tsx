@@ -34,6 +34,7 @@ import {
   Send,
   CheckCircle,
   ArrowUp,
+  Smartphone,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -887,6 +888,18 @@ function Contact() {
                     </div>
                   </a>
                   <a
+                    href="sms:+254718557830"
+                    className="flex items-center gap-5 group"
+                  >
+                    <div className="size-12 rounded-xl bg-gradient-brand grid place-items-center text-primary-foreground shrink-0">
+                      <Smartphone className="size-6" />
+                    </div>
+                    <div className="min-w-0">
+                      <p className="text-xs uppercase tracking-wider text-muted-foreground">SMS</p>
+                      <p className="font-semibold group-hover:text-primary transition-colors">+254 718 557 830</p>
+                    </div>
+                  </a>
+                  <a
                     href="mailto:sharoncarister9@gmail.com"
                     className="flex items-center gap-5 group"
                   >
@@ -930,8 +943,20 @@ function Contact() {
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
+                  const form = e.currentTarget;
+                  const data = new FormData(form);
+                  const name = data.get("name") as string;
+                  const email = data.get("email") as string;
+                  const subject = data.get("subject") as string;
+                  const message = data.get("message") as string;
+
+                  const body = `Hi Sharon,\n\nMy name is ${name}.\n\n${message}\n\nBest regards,\n${name}\nEmail: ${email}`;
+                  const mailtoUrl = `mailto:sharoncarister9@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                  window.open(mailtoUrl, "_blank");
+
                   setSent(true);
                   setTimeout(() => setSent(false), 4000);
+                  form.reset();
                 }}
                 className="bg-background/70 backdrop-blur border border-border rounded-3xl p-6 md:p-8 space-y-4"
               >
@@ -955,6 +980,7 @@ function Contact() {
                       </label>
                       <textarea
                         required
+                        name="message"
                         rows={4}
                         placeholder="Tell me about your project..."
                         className="w-full rounded-2xl border border-input bg-background px-4 py-3 text-[16px] focus:outline-none focus:ring-2 focus:ring-ring resize-none shadow-sm transition-shadow focus:shadow-md"
