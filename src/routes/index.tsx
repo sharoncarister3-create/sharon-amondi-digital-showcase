@@ -35,6 +35,8 @@ import {
   CheckCircle,
   ArrowUp,
   Smartphone,
+  ExternalLink,
+  Github,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -180,6 +182,40 @@ const portfolio = [
     result: "Boosted campaign engagement by 180% and doubled sign-ups in two weeks.",
   },
 ];
+
+const featuredProject = {
+  title: "Sharon Amondi — Digital Showcase",
+  subtitle: "Personal Portfolio Website",
+  description:
+    "A modern, responsive portfolio website built to showcase graphic design, branding, digital marketing, and web development work. Designed and developed end-to-end — from UI/UX concept to production deployment.",
+  technologies: [
+    "React 19",
+    "TypeScript",
+    "TanStack Router",
+    "Tailwind CSS",
+    "Vite",
+    "Vercel",
+    "Framer Motion",
+    "Radix UI",
+  ],
+  features: [
+    "Fully responsive design with mobile-first approach",
+    "Smooth scroll-triggered animations and reveal effects",
+    "Interactive navigation with active section highlighting",
+    "Contact form with WhatsApp, SMS, and email integration",
+    "Optimized performance with lazy loading and code splitting",
+    "SEO-friendly with meta tags and Open Graph support",
+  ],
+  role: "UI/UX Designer & Full-Stack Developer",
+  challenge:
+    "Creating a portfolio that not only displays creative work but also demonstrates technical capability — balancing visual richness with fast load times and accessibility.",
+  solution:
+    "Built a single-page React application with server-side rendering, leveraged Tailwind CSS for a consistent design system, and implemented custom scroll animations that enhance UX without impacting performance.",
+  result:
+    "A polished, production-ready portfolio that loads in under 2 seconds, scores 95+ on Lighthouse, and effectively communicates expertise across design and development disciplines.",
+  liveUrl: "https://sharon-amondi-digital-showcase.vercel.app",
+  githubUrl: "https://github.com/sharoncarister3-create/sharon-amondi-digital-showcase",
+};
 
 const expertise = [
   { icon: Palette, label: "Graphic Design" },
@@ -766,6 +802,139 @@ function Portfolio() {
             </Button>
           </Reveal>
         </div>
+
+        {/* Featured Project */}
+        <Reveal>
+          <div className="mb-20 rounded-3xl border border-border bg-card overflow-hidden hover:shadow-[var(--shadow-soft)] transition-all">
+            <div className="relative">
+              <div className="absolute top-4 left-4 z-10 flex items-center gap-2">
+                <span className="px-3 py-1.5 rounded-full bg-gradient-brand text-primary-foreground text-[11px] font-bold uppercase tracking-widest shadow-lg">
+                  Featured Project
+                </span>
+              </div>
+
+              <div className="grid lg:grid-cols-2 gap-0">
+                {/* Preview mockups */}
+                <div className="relative bg-secondary/50 p-8 md:p-12 flex items-center justify-center min-h-[320px] md:min-h-[420px]">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50/40 via-transparent to-purple-50/30 pointer-events-none" />
+                  <div className="relative flex items-end gap-4">
+                    {/* Desktop mockup */}
+                    <div className="w-[260px] md:w-[340px] rounded-t-xl border border-border bg-background shadow-2xl overflow-hidden">
+                      <div className="h-5 bg-secondary/80 border-b border-border flex items-center gap-1.5 px-2.5">
+                        <span className="size-2 rounded-full bg-red-400/70" />
+                        <span className="size-2 rounded-full bg-yellow-400/70" />
+                        <span className="size-2 rounded-full bg-green-400/70" />
+                        <span className="ml-2 text-[9px] text-muted-foreground truncate">sharon-amondi.vercel.app</span>
+                      </div>
+                      <div className="aspect-[16/10] bg-background p-3 space-y-2">
+                        <div className="flex items-center justify-between">
+                          <div className="h-3 w-16 rounded-full bg-gradient-brand/30" />
+                          <div className="flex gap-1.5">
+                            <div className="h-2 w-8 rounded-full bg-secondary" />
+                            <div className="h-2 w-8 rounded-full bg-secondary" />
+                            <div className="h-2 w-8 rounded-full bg-secondary" />
+                          </div>
+                        </div>
+                        <div className="h-12 w-full rounded-lg bg-gradient-brand/10" />
+                        <div className="grid grid-cols-3 gap-1.5">
+                          <div className="h-14 rounded bg-secondary/60" />
+                          <div className="h-14 rounded bg-secondary/60" />
+                          <div className="h-14 rounded bg-secondary/60" />
+                        </div>
+                        <div className="h-8 w-3/4 rounded-lg bg-secondary/40" />
+                        <div className="h-4 w-full rounded bg-secondary/30" />
+                        <div className="h-4 w-5/6 rounded bg-secondary/30" />
+                      </div>
+                    </div>
+                    {/* Mobile mockup */}
+                    <div className="w-[100px] md:w-[120px] rounded-t-xl border border-border bg-background shadow-2xl overflow-hidden hidden sm:block">
+                      <div className="h-4 bg-secondary/80 border-b border-border flex items-center justify-center">
+                        <div className="w-8 h-1.5 rounded-full bg-secondary" />
+                      </div>
+                      <div className="aspect-[9/16] bg-background p-2 space-y-1.5">
+                        <div className="h-2 w-10 rounded-full bg-gradient-brand/30" />
+                        <div className="h-6 w-full rounded bg-gradient-brand/10" />
+                        <div className="grid grid-cols-2 gap-1">
+                          <div className="h-8 rounded bg-secondary/60" />
+                          <div className="h-8 rounded bg-secondary/60" />
+                        </div>
+                        <div className="h-2 w-full rounded bg-secondary/30" />
+                        <div className="h-2 w-4/5 rounded bg-secondary/30" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Details */}
+                <div className="p-8 md:p-10 space-y-6 flex flex-col justify-center">
+                  <div>
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-gradient-brand mb-2">{featuredProject.subtitle}</p>
+                    <h3 className="text-2xl md:text-3xl font-bold leading-tight">{featuredProject.title}</h3>
+                  </div>
+                  <p className="text-muted-foreground leading-relaxed">{featuredProject.description}</p>
+
+                  <div className="space-y-4">
+                    <div>
+                      <p className="text-[10px] font-bold uppercase tracking-widest text-gradient-brand mb-2">Role</p>
+                      <p className="text-sm font-medium">{featuredProject.role}</p>
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-bold uppercase tracking-widest text-gradient-brand mb-2">Technologies</p>
+                      <div className="flex flex-wrap gap-1.5">
+                        {featuredProject.technologies.map((t) => (
+                          <span key={t} className="text-[11px] font-medium px-2.5 py-1 rounded-full bg-secondary border border-border">
+                            {t}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <div>
+                      <p className="text-[10px] font-bold uppercase tracking-widest text-gradient-brand mb-1.5">Challenge</p>
+                      <p className="text-sm text-muted-foreground leading-relaxed">{featuredProject.challenge}</p>
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-bold uppercase tracking-widest text-gradient-brand mb-1.5">Solution</p>
+                      <p className="text-sm text-muted-foreground leading-relaxed">{featuredProject.solution}</p>
+                    </div>
+                  </div>
+
+                  <div>
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-gradient-brand mb-1.5">Key Features</p>
+                    <ul className="grid sm:grid-cols-2 gap-1.5">
+                      {featuredProject.features.map((f) => (
+                        <li key={f} className="flex items-start gap-2 text-sm text-muted-foreground">
+                          <Check className="size-3.5 mt-1 shrink-0 text-gradient-brand" />
+                          {f}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="pt-2 border-t border-border">
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-gradient-brand mb-1">Result</p>
+                    <p className="text-sm font-medium leading-snug">{featuredProject.result}</p>
+                  </div>
+
+                  <div className="flex flex-wrap gap-3 pt-2">
+                    <Button asChild className="rounded-full bg-gradient-brand text-primary-foreground hover:opacity-90 transition-opacity">
+                      <a href={featuredProject.liveUrl} target="_blank" rel="noopener noreferrer">
+                        Live Demo <ExternalLink className="size-4" />
+                      </a>
+                    </Button>
+                    <Button asChild variant="outline" className="rounded-full">
+                      <a href={featuredProject.githubUrl} target="_blank" rel="noopener noreferrer">
+                        <Github className="size-4" /> GitHub Repository
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Reveal>
 
         <div className="space-y-16">
           {categories.map((cat) => (
