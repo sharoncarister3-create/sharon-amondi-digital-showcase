@@ -34,12 +34,8 @@ import {
   Send,
   CheckCircle,
   ArrowUp,
-  Smartphone,
-  ExternalLink,
-  Github,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useIsMobile } from "@/hooks/use-mobile";
 
 const portraitUrl = "/lov.img.jpeg";
 
@@ -183,40 +179,6 @@ const portfolio = [
   },
 ];
 
-const featuredProject = {
-  title: "Sharon Amondi — Digital Showcase",
-  subtitle: "Personal Portfolio Website",
-  description:
-    "A modern, responsive portfolio website built to showcase graphic design, branding, digital marketing, and web development work. Designed and developed end-to-end — from UI/UX concept to production deployment.",
-  technologies: [
-    "React 19",
-    "TypeScript",
-    "TanStack Router",
-    "Tailwind CSS",
-    "Vite",
-    "Vercel",
-    "Framer Motion",
-    "Radix UI",
-  ],
-  features: [
-    "Fully responsive design with mobile-first approach",
-    "Smooth scroll-triggered animations and reveal effects",
-    "Interactive navigation with active section highlighting",
-    "Contact form with WhatsApp, SMS, and email integration",
-    "Optimized performance with lazy loading and code splitting",
-    "SEO-friendly with meta tags and Open Graph support",
-  ],
-  role: "UI/UX Designer & Full-Stack Developer",
-  challenge:
-    "Creating a portfolio that not only displays creative work but also demonstrates technical capability — balancing visual richness with fast load times and accessibility.",
-  solution:
-    "Built a single-page React application with server-side rendering, leveraged Tailwind CSS for a consistent design system, and implemented custom scroll animations that enhance UX without impacting performance.",
-  result:
-    "A polished, production-ready portfolio that loads in under 2 seconds, scores 95+ on Lighthouse, and effectively communicates expertise across design and development disciplines.",
-  liveUrl: "https://sharon-amondi-digital-showcase.vercel.app",
-  githubUrl: "https://github.com/sharoncarister3-create/sharon-amondi-digital-showcase",
-};
-
 const expertise = [
   { icon: Palette, label: "Graphic Design" },
   { icon: PenTool, label: "Branding & Logo Design" },
@@ -332,7 +294,7 @@ function Nav() {
     { href: "#top", label: "Home" },
     { href: "#about", label: "About" },
     { href: "#services", label: "Services" },
-    { href: "#work", label: "Projects" },
+    { href: "#work", label: "Work" },
 
     { href: "#contact", label: "Contact" },
   ];
@@ -792,7 +754,7 @@ function Portfolio() {
                 Selected Work
               </p>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
-                My Portfolio
+                Recent projects by <span className="text-gradient-brand">category</span>.
               </h2>
             </div>
           </Reveal>
@@ -802,139 +764,6 @@ function Portfolio() {
             </Button>
           </Reveal>
         </div>
-
-        {/* Featured Project */}
-        <Reveal>
-          <div className="mb-20 rounded-3xl border border-border bg-card overflow-hidden hover:shadow-[var(--shadow-soft)] transition-all">
-            <div className="relative">
-              <div className="absolute top-4 left-4 z-10 flex items-center gap-2">
-                <span className="px-3 py-1.5 rounded-full bg-gradient-brand text-primary-foreground text-[11px] font-bold uppercase tracking-widest shadow-lg">
-                  Featured Project
-                </span>
-              </div>
-
-              <div className="grid lg:grid-cols-2 gap-0">
-                {/* Preview mockups */}
-                <div className="relative bg-secondary/50 p-8 md:p-12 flex items-center justify-center min-h-[320px] md:min-h-[420px]">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50/40 via-transparent to-purple-50/30 pointer-events-none" />
-                  <div className="relative flex items-end gap-4">
-                    {/* Desktop mockup */}
-                    <div className="w-[260px] md:w-[340px] rounded-t-xl border border-border bg-background shadow-2xl overflow-hidden">
-                      <div className="h-5 bg-secondary/80 border-b border-border flex items-center gap-1.5 px-2.5">
-                        <span className="size-2 rounded-full bg-red-400/70" />
-                        <span className="size-2 rounded-full bg-yellow-400/70" />
-                        <span className="size-2 rounded-full bg-green-400/70" />
-                        <span className="ml-2 text-[9px] text-muted-foreground truncate">sharon-amondi.vercel.app</span>
-                      </div>
-                      <div className="aspect-[16/10] bg-background p-3 space-y-2">
-                        <div className="flex items-center justify-between">
-                          <div className="h-3 w-16 rounded-full bg-gradient-brand/30" />
-                          <div className="flex gap-1.5">
-                            <div className="h-2 w-8 rounded-full bg-secondary" />
-                            <div className="h-2 w-8 rounded-full bg-secondary" />
-                            <div className="h-2 w-8 rounded-full bg-secondary" />
-                          </div>
-                        </div>
-                        <div className="h-12 w-full rounded-lg bg-gradient-brand/10" />
-                        <div className="grid grid-cols-3 gap-1.5">
-                          <div className="h-14 rounded bg-secondary/60" />
-                          <div className="h-14 rounded bg-secondary/60" />
-                          <div className="h-14 rounded bg-secondary/60" />
-                        </div>
-                        <div className="h-8 w-3/4 rounded-lg bg-secondary/40" />
-                        <div className="h-4 w-full rounded bg-secondary/30" />
-                        <div className="h-4 w-5/6 rounded bg-secondary/30" />
-                      </div>
-                    </div>
-                    {/* Mobile mockup */}
-                    <div className="w-[100px] md:w-[120px] rounded-t-xl border border-border bg-background shadow-2xl overflow-hidden hidden sm:block">
-                      <div className="h-4 bg-secondary/80 border-b border-border flex items-center justify-center">
-                        <div className="w-8 h-1.5 rounded-full bg-secondary" />
-                      </div>
-                      <div className="aspect-[9/16] bg-background p-2 space-y-1.5">
-                        <div className="h-2 w-10 rounded-full bg-gradient-brand/30" />
-                        <div className="h-6 w-full rounded bg-gradient-brand/10" />
-                        <div className="grid grid-cols-2 gap-1">
-                          <div className="h-8 rounded bg-secondary/60" />
-                          <div className="h-8 rounded bg-secondary/60" />
-                        </div>
-                        <div className="h-2 w-full rounded bg-secondary/30" />
-                        <div className="h-2 w-4/5 rounded bg-secondary/30" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Details */}
-                <div className="p-8 md:p-10 space-y-6 flex flex-col justify-center">
-                  <div>
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-gradient-brand mb-2">{featuredProject.subtitle}</p>
-                    <h3 className="text-2xl md:text-3xl font-bold leading-tight">{featuredProject.title}</h3>
-                  </div>
-                  <p className="text-muted-foreground leading-relaxed">{featuredProject.description}</p>
-
-                  <div className="space-y-4">
-                    <div>
-                      <p className="text-[10px] font-bold uppercase tracking-widest text-gradient-brand mb-2">Role</p>
-                      <p className="text-sm font-medium">{featuredProject.role}</p>
-                    </div>
-                    <div>
-                      <p className="text-[10px] font-bold uppercase tracking-widest text-gradient-brand mb-2">Technologies</p>
-                      <div className="flex flex-wrap gap-1.5">
-                        {featuredProject.technologies.map((t) => (
-                          <span key={t} className="text-[11px] font-medium px-2.5 py-1 rounded-full bg-secondary border border-border">
-                            {t}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div>
-                      <p className="text-[10px] font-bold uppercase tracking-widest text-gradient-brand mb-1.5">Challenge</p>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{featuredProject.challenge}</p>
-                    </div>
-                    <div>
-                      <p className="text-[10px] font-bold uppercase tracking-widest text-gradient-brand mb-1.5">Solution</p>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{featuredProject.solution}</p>
-                    </div>
-                  </div>
-
-                  <div>
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-gradient-brand mb-1.5">Key Features</p>
-                    <ul className="grid sm:grid-cols-2 gap-1.5">
-                      {featuredProject.features.map((f) => (
-                        <li key={f} className="flex items-start gap-2 text-sm text-muted-foreground">
-                          <Check className="size-3.5 mt-1 shrink-0 text-gradient-brand" />
-                          {f}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="pt-2 border-t border-border">
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-gradient-brand mb-1">Result</p>
-                    <p className="text-sm font-medium leading-snug">{featuredProject.result}</p>
-                  </div>
-
-                  <div className="flex flex-wrap gap-3 pt-2">
-                    <Button asChild className="rounded-full bg-gradient-brand text-primary-foreground hover:opacity-90 transition-opacity">
-                      <a href={featuredProject.liveUrl} target="_blank" rel="noopener noreferrer">
-                        Live Demo <ExternalLink className="size-4" />
-                      </a>
-                    </Button>
-                    <Button asChild variant="outline" className="rounded-full">
-                      <a href={featuredProject.githubUrl} target="_blank" rel="noopener noreferrer">
-                        <Github className="size-4" /> GitHub Repository
-                      </a>
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Reveal>
 
         <div className="space-y-16">
           {categories.map((cat) => (
@@ -1011,8 +840,6 @@ function Portfolio() {
 
 function Contact() {
   const [sent, setSent] = useState(false);
-  const [showSmsTip, setShowSmsTip] = useState(false);
-  const isMobile = useIsMobile();
   return (
     <section id="contact" className="py-10 md:py-16">
       <div className="max-w-7xl mx-auto px-6">
@@ -1059,32 +886,6 @@ function Contact() {
                       <p className="font-semibold group-hover:text-primary transition-colors">+254 718 557 830</p>
                     </div>
                   </a>
-                  <div className="relative">
-                    <a
-                      href={isMobile ? "sms:+254718557830" : "#"}
-                      onClick={(e) => {
-                        if (!isMobile) {
-                          e.preventDefault();
-                          setShowSmsTip(true);
-                          setTimeout(() => setShowSmsTip(false), 3000);
-                        }
-                      }}
-                      className="flex items-center gap-5 group"
-                    >
-                      <div className="size-12 rounded-xl bg-gradient-brand grid place-items-center text-primary-foreground shrink-0">
-                        <Smartphone className="size-6" />
-                      </div>
-                      <div className="min-w-0">
-                        <p className="text-xs uppercase tracking-wider text-muted-foreground">SMS</p>
-                        <p className="font-semibold group-hover:text-primary transition-colors">+254 718 557 830</p>
-                      </div>
-                    </a>
-                    {showSmsTip && (
-                      <div className="absolute left-0 top-full mt-2 z-10 rounded-xl bg-foreground text-background px-4 py-2 text-sm font-medium shadow-lg animate-in fade-in slide-in-from-top-2 duration-200 whitespace-nowrap">
-                        Open on your phone to send an SMS
-                      </div>
-                    )}
-                  </div>
                   <a
                     href="mailto:sharoncarister9@gmail.com"
                     className="flex items-center gap-5 group"
@@ -1129,20 +930,8 @@ function Contact() {
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
-                  const form = e.currentTarget;
-                  const data = new FormData(form);
-                  const name = data.get("name") as string;
-                  const email = data.get("email") as string;
-                  const subject = data.get("subject") as string;
-                  const message = data.get("message") as string;
-
-                  const body = `Hi Sharon,\n\nMy name is ${name}.\n\n${message}\n\nBest regards,\n${name}\nEmail: ${email}`;
-                  const mailtoUrl = `mailto:sharoncarister9@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-                  window.open(mailtoUrl, "_blank");
-
                   setSent(true);
                   setTimeout(() => setSent(false), 4000);
-                  form.reset();
                 }}
                 className="bg-background/70 backdrop-blur border border-border rounded-3xl p-6 md:p-8 space-y-4"
               >
@@ -1166,7 +955,6 @@ function Contact() {
                       </label>
                       <textarea
                         required
-                        name="message"
                         rows={4}
                         placeholder="Tell me about your project..."
                         className="w-full rounded-2xl border border-input bg-background px-4 py-3 text-[16px] focus:outline-none focus:ring-2 focus:ring-ring resize-none shadow-sm transition-shadow focus:shadow-md"
