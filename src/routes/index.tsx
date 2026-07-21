@@ -130,7 +130,7 @@ function Reveal({ children, delay = 0 }: { children: ReactNode; delay?: number }
 
 const services = [
   { icon: Palette, title: "Graphic Design", desc: "Visual systems that communicate purpose and clarity." },
-  { icon: PenTool, title: "Logo Design & Branding", desc: "Memorable marks and complete brand guidelines." },
+  { icon: PenTool, title: "Logo Design", desc: "Memorable marks and complete brand guidelines." },
   { icon: Layout, title: "Poster & Flyer Design", desc: "High-impact print media for events and campaigns." },
   { icon: Share2, title: "Social Media Design", desc: "Cohesive feed visuals that stop the scroll." },
   { icon: Megaphone, title: "Digital Marketing", desc: "Strategies that turn attention into conversion." },
