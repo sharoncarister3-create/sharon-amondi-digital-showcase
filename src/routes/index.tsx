@@ -756,7 +756,7 @@ function Portfolio() {
                 Selected Work
               </p>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
-                Recent projects by <span className="text-gradient-brand">category</span>.
+                My Portfolio
               </h2>
             </div>
           </Reveal>
