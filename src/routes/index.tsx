@@ -296,7 +296,7 @@ function Nav() {
     { href: "#top", label: "Home" },
     { href: "#about", label: "About" },
     { href: "#services", label: "Services" },
-    { href: "#work", label: "Work" },
+    { href: "#work", label: "Projects" },
 
     { href: "#contact", label: "Contact" },
   ];
